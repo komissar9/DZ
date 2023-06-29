@@ -10,56 +10,56 @@
 //     Console.Write($"Число {numberUser} не трёхзначное");
 
 // 13. Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. До 10 символов
-Console.Write("Введите число, содержащее до 10 символов: ");
-Int64 numberUser = Convert.ToInt64(Console.ReadLine());
-if (numberUser < 100)
-{
-    Console.WriteLine($"В числе {numberUser} нет третьей цифры");
-}
-if (numberUser >= 100 && numberUser < 1000)
-{
-    Int64 thirdDigital = (numberUser % 10);
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 1000 && numberUser < 10000)
-{
-    Int64 thirdDigital = (numberUser % 100 - numberUser % 10)/10;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 10000 && numberUser < 100000)
-{
-    Int64 thirdDigital = (numberUser % 1000 - numberUser % 100)/100;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 100000 && numberUser < 1000000)
-{
-    Int64 thirdDigital = (numberUser % 10000 - numberUser % 1000)/1000;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 1000000 && numberUser < 10000000)
-{
-    Int64 thirdDigital = (numberUser % 100000 - numberUser % 10000)/10000;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 10000000 && numberUser < 100000000)
-{
-    Int64 thirdDigital = (numberUser % 1000000 - numberUser % 100000)/100000;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 100000000 && numberUser < 1000000000)
-{
-    Int64 thirdDigital = (numberUser % 10000000 - numberUser % 1000000)/1000000;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser >= 1000000000 && numberUser < 10000000000)
-{
-    Int64 thirdDigital = (numberUser % 100000000 - numberUser % 10000000)/10000000;
-    Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
-}
-if (numberUser > 10000000000)
-{
-    Console.WriteLine($"Число {numberUser} содержит более 10 символов");
-}
+// Console.Write("Введите число, содержащее до 10 символов: ");
+// Int64 numberUser = Convert.ToInt64(Console.ReadLine());
+// if (numberUser < 100)
+// {
+//     Console.WriteLine($"В числе {numberUser} нет третьей цифры");
+// }
+// if (numberUser >= 100 && numberUser < 1000)
+// {
+//     Int64 thirdDigital = (numberUser % 10);
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 1000 && numberUser < 10000)
+// {
+//     Int64 thirdDigital = (numberUser % 100 - numberUser % 10)/10;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 10000 && numberUser < 100000)
+// {
+//     Int64 thirdDigital = (numberUser % 1000 - numberUser % 100)/100;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 100000 && numberUser < 1000000)
+// {
+//     Int64 thirdDigital = (numberUser % 10000 - numberUser % 1000)/1000;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 1000000 && numberUser < 10000000)
+// {
+//     Int64 thirdDigital = (numberUser % 100000 - numberUser % 10000)/10000;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 10000000 && numberUser < 100000000)
+// {
+//     Int64 thirdDigital = (numberUser % 1000000 - numberUser % 100000)/100000;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 100000000 && numberUser < 1000000000)
+// {
+//     Int64 thirdDigital = (numberUser % 10000000 - numberUser % 1000000)/1000000;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser >= 1000000000 && numberUser < 10000000000)
+// {
+//     Int64 thirdDigital = (numberUser % 100000000 - numberUser % 10000000)/10000000;
+//     Console.WriteLine($"В числе {numberUser} третья цифра {thirdDigital}");
+// }
+// if (numberUser > 10000000000)
+// {
+//     Console.WriteLine($"Число {numberUser} содержит более 10 символов");
+// }
 
 // 15. Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным
 // Console.Write("Введите число дня недели, чтобы проверить выходной это или нет: ");
@@ -79,3 +79,17 @@ if (numberUser > 10000000000)
 
 // Доп. Назовём число «интересным» если его произведение цифр делится на их сумму БЕЗ остатка. Напишите программу, 
 // которая заполняет массив на 10 «интересных» случайных целых чисел от 10 до 1000(999 - последнее). (каждый эл-т массива – сгенерирован случайно)
+int Number = new Random(); 
+int firstDigital =  Number / 100;
+int secondDigital = (Number % 100 - Number % 10) / 10;
+int thirdDigital = (Number % 10);
+int unusialNumber = (firstDigital * secondDigital * thirdDigital) % (firstDigital + secondDigital + thirdDigital);
+if (unusialNumber==0)
+{
+    int[] unusialNumbers = new int[10];
+    for ( int i = 0; i < unusialNumbers.Length; i++)
+    {
+        unusialNumbers[i] = unusialNumber.Next(10, 1000);
+    }
+}
+Console.WriteLine(unusialNumbers[10]);
