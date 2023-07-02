@@ -9,7 +9,7 @@
 // else
 //     Console.Write($"Число {numberUser} не трёхзначное");
 
-// // 13. Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. До 10 символов
+// 13. Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. До 10 символов
 Console.Write("Введите число, содержащее до 10 символов: ");
 string? numberUser = Console.ReadLine();
 int numberint;
@@ -24,6 +24,10 @@ if (number)
     {
         Console.WriteLine($"В числе {numberUser} третья цифра {numberUser[2]}");
     }
+}
+  if (numberUser.Length > 10)
+{
+    Console.WriteLine("Число содержит более 10 цифр");
 }
 else
 {
@@ -56,17 +60,17 @@ else
 // if (unusialNumber==0)
 // {
 //     int [] unusialNumbers = new int [10] {unusialNumber, unusialNumber, unusialNumber, unusialNumber, unusialNumber, unusialNumber,unusialNumber, unusialNumber, unusialNumber, unusialNumber};
-//     // void unusialNumbers(int[] collection) 
-//     // {
-//     //     int length = collection.Length;
-//     //     int index = 0;
+    // void unusialNumbers(int[] collection) 
+    // {
+    //     int length = collection.Length;
+    //     int index = 0;
        
-//     //     while (index < length)
-//     //     {
-//     //         collection[index] = new Random().Next(1, 1000);
-//     //         index++;
+    //     while (index < length)
+    //     {
+    //         collection[index] = new Random().Next(1, 1000);
+    //         index++;
 
-//     //     }
-//     // }
+    //     }
+    // }
 //    Console.WriteLine("[{0}]", string.Join(", ", unusialNumbers));
 // }
